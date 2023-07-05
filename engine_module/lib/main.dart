@@ -42,7 +42,8 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
-  initialLocation: PlatformDispatcher.instance.defaultRouteName, // 获取原生传递的路由 (initRoute)
+  navigatorKey:  YCNavigator().navigatorKey,
+  initialLocation: YCNavigator().appInitialRoute, // 获取原生传递的路由 (initRoute)
   routes: [
     GoRoute(
       path: '/',
@@ -79,6 +80,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  bool _toNative = true;
 
   late MethodChannel _channel;
 
@@ -120,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
-              
+              YCNavigator().pop();
             },
         )
       ),
@@ -151,6 +153,20 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Switch(value: _toNative, onChanged: (state){
+                  setState(() {
+                    _toNative = state;
+                  });
+            }),
+            TextButton(onPressed: (){
+              // context.go('/users/123');
+              YCNavigator().push( '/accounts', toNative: _toNative);
+            }, child:  Text('跳转到账户模块 toNative $_toNative')),
+
+            TextButton(onPressed: (){
+              // context.go('/users/123');
+              YCNavigator().push( '/accounts', toNative: _toNative);
+            }, child:  Text('跳转到账户模块 toNative $_toNative'))
           ],
         ),
       ),

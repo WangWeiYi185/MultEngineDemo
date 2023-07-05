@@ -16,9 +16,9 @@ import Foundation
 class SingleFlutterViewController: FlutterViewController, DataModelObserver {
   private var channel: FlutterMethodChannel?
 
-  init(withEntrypoint entryPoint: String?) {
+    init(withEntrypoint entryPoint: String?, _ initRouter: String?) {
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let newEngine = appDelegate.engines.makeEngine(withEntrypoint: entryPoint, libraryURI: "/")
+    let newEngine = appDelegate.engines.makeEngine(withEntrypoint: entryPoint, libraryURI: nil, initialRoute: initRouter)
     GeneratedPluginRegistrant.register(with: newEngine)
     super.init(engine: newEngine, nibName: nil, bundle: nil)
     DataModel.shared.addObserver(observer: self)
@@ -49,11 +49,24 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
       if call.method == "incrementCount" {
         DataModel.shared.count = DataModel.shared.count + 1
         result(nil)
-      } else if call.method == "next" {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "NativeViewCount")
-        navController.pushViewController(vc, animated: true)
-        result(nil)
+      } else if call.method == "push" {
+          print("原生路由压栈 \(type(of: call.arguments))")
+          if  let arguments = call.arguments as? [AnyHashable: Any?],
+              let route = arguments["route"] as? String {
+              let vc = SingleFlutterViewController(withEntrypoint: "main", route)
+              navController.pushViewController(vc, animated: true)
+              result("")
+          } else {
+              result("")
+          }
+          
+          
+          
+          
+      } else if call.method == "pop" {
+          print("原生路由弹栈 \(call.arguments ?? "")")
+          navController.popViewController(animated: true)
+          
       } else {
         result(FlutterMethodNotImplemented)
       }

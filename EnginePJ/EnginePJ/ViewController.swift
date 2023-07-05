@@ -73,8 +73,8 @@ class ViewController: UIViewController, DataModelObserver {
     @objc func action() {
         // 模拟混合栈路由处理逻辑
         let navController = self.navigationController!
-          if DataModel.shared.count % 3 == 1 {
-            let vc = SingleFlutterViewController(withEntrypoint: "main")
+          if DataModel.shared.count % 2 == 1 {
+            let vc = SingleFlutterViewController(withEntrypoint: "main", nil)
             navController.pushViewController(vc, animated: true)
           } else {
             let vc = ViewController()
