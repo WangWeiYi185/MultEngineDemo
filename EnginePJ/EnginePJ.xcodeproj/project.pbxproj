@@ -18,7 +18,7 @@
 		822A5B862A53E6F200400B21 /* EnginePJUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5B852A53E6F200400B21 /* EnginePJUITestsLaunchTests.swift */; };
 		822A5B932A53E72200400B21 /* YCFlutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5B922A53E72200400B21 /* YCFlutterViewController.swift */; };
 		822A5B952A53E94D00400B21 /* YCDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5B942A53E94D00400B21 /* YCDataModel.swift */; };
-		822A5B972A53F8CE00400B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822A5B962A53F8CD00400B21 /* Main.storyboard */; };
+		822A5B992A557C1F00400B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822A5B982A557C1F00400B21 /* Main.storyboard */; };
 		F0EDCF9BEF7259675E12102F /* Pods_EnginePJTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C415C93ED4A6DE3D618F8F5 /* Pods_EnginePJTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		822A5B852A53E6F200400B21 /* EnginePJUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnginePJUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		822A5B922A53E72200400B21 /* YCFlutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCFlutterViewController.swift; sourceTree = "<group>"; };
 		822A5B942A53E94D00400B21 /* YCDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCDataModel.swift; sourceTree = "<group>"; };
-		822A5B962A53F8CD00400B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		822A5B982A557C1F00400B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		92FB9E9EA8BC2FBDB3A0B4C0 /* Pods-EnginePJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJ.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJ/Pods-EnginePJ.debug.xcconfig"; sourceTree = "<group>"; };
 		9755CE38F43BB942E6C728EC /* Pods-EnginePJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJTests.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJTests/Pods-EnginePJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9010F3C5EAC55556F848BA9 /* Pods_EnginePJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnginePJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,8 +128,8 @@
 		822A5B612A53E6F000400B21 /* EnginePJ */ = {
 			isa = PBXGroup;
 			children = (
-				822A5B962A53F8CD00400B21 /* Main.storyboard */,
 				822A5B622A53E6F000400B21 /* AppDelegate.swift */,
+				822A5B982A557C1F00400B21 /* Main.storyboard */,
 				822A5B662A53E6F000400B21 /* ViewController.swift */,
 				822A5B942A53E94D00400B21 /* YCDataModel.swift */,
 				822A5B6B2A53E6F200400B21 /* Assets.xcassets */,
@@ -279,7 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				822A5B972A53F8CE00400B21 /* Main.storyboard in Resources */,
+				822A5B992A557C1F00400B21 /* Main.storyboard in Resources */,
 				822A5B6F2A53E6F200400B21 /* LaunchScreen.storyboard in Resources */,
 				822A5B6C2A53E6F200400B21 /* Assets.xcassets in Resources */,
 			);

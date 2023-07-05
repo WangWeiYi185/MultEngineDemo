@@ -40,7 +40,7 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationController?.setNavigationBarHidden(true, animated: false)
+
     channel = FlutterMethodChannel(
       name: "multiple-flutters", binaryMessenger: self.engine!.binaryMessenger)
     channel!.invokeMethod("setCount", arguments: DataModel.shared.count)
@@ -72,4 +72,57 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
       }
     }
   }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (!(self.navigationController?.isNavigationBarHidden ?? <#default value#>)) {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+        
+    }
+    
+
+    
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    if (!self.navigationController.navigationBarHidden) {
+//        [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    }
+//
+//    [self.plugin.flutterPagesApi willAppearWithCompletion:^(NSError * _Nullable error) {
+//
+//     }];
+//
+//
+//}
+//
+//- (void)viewDidAppear:(BOOL)animated {
+//    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+//        // 防止crash隐患
+//        // https://github.com/flutter/flutter/issues/57973
+//        [self surfaceUpdated:YES];
+//    }
+//    [super viewDidAppear:animated];
+//
+//    [self.plugin.flutterPagesApi didAppearWithCompletion:^(NSError * _Nullable error) {}];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [[UIApplication sharedApplication].delegate.window endEditing:YES];
+//    [super viewWillDisappear:animated];
+//    [self.plugin.flutterPagesApi willDisappearWithCompletion:^(NSError * _Nullable error) {}];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    if (![self.navigationController.viewControllers containsObject:self] && ![self presentedViewController]) {
+//        if (self.yzPageResultBlock) {
+//            self.yzPageResultBlock(self.plugin.pageResult);
+//        }
+//    }
+//    [self.plugin.flutterPagesApi didDisappearWithCompletion:^(NSError * _Nullable error) {}];
+//}
+//
+    
 }
