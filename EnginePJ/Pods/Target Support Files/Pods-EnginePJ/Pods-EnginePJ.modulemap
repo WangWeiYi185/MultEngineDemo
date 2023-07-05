@@ -1,0 +1,6 @@
+framework module Pods_EnginePJ {
+  umbrella header "Pods-EnginePJ-umbrella.h"
+
+  export *
+  module * { export * }
+}
