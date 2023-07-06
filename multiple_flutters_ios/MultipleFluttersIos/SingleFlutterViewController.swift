@@ -65,7 +65,10 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
               let route = arguments["route"] as? String {
               print("原生路由压栈 \(route)")
               if (route == "/accounts") {
-                  let vc = SingleFlutterViewController(withEntrypoint: "main", route)
+//                  let vc = SingleFlutterViewController(withEntrypoint: "main", route)
+//                  navController.pushViewController(vc, animated: true)
+                  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                  let vc = storyboard.instantiateViewController(withIdentifier: "NativeViewCount")
                   navController.pushViewController(vc, animated: true)
               } else {
                   let vc = HostViewController()
