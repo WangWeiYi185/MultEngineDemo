@@ -14,11 +14,18 @@ import Foundation
 /// datamodel.  In practice you should override the other init methods or switch to composition
 /// instead of inheritence.
 class SingleFlutterViewController: FlutterViewController, DataModelObserver {
-  private var channel: FlutterMethodChannel?
+    private var channel: FlutterMethodChannel?
+
+    
 
     init(withEntrypoint entryPoint: String?, _ initRouter: String?) {
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let newEngine = appDelegate.enginesGroup.makeEngine(withEntrypoint: entryPoint, libraryURI: nil, initialRoute: initRouter)
+    let options = FlutterEngineGroupOptions.init();
+    options.entrypoint = entryPoint;
+    options.initialRoute = initRouter;
+
+
+    let newEngine = appDelegate.enginesGroup.makeEngine(with: options)
     GeneratedPluginRegistrant.register(with: newEngine)
     super.init(engine: newEngine, nibName: nil, bundle: nil)
     DataModel.shared.addObserver(observer: self)
@@ -41,6 +48,7 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+
     channel = FlutterMethodChannel(
       name: "multiple-flutters", binaryMessenger: self.engine!.binaryMessenger)
     channel!.invokeMethod("setCount", arguments: DataModel.shared.count)
@@ -53,8 +61,14 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
           print("原生路由压栈 \(type(of: call.arguments))")
           if  let arguments = call.arguments as? [AnyHashable: Any?],
               let route = arguments["route"] as? String {
-              let vc = SingleFlutterViewController(withEntrypoint: "main", route)
-              navController.pushViewController(vc, animated: true)
+              print("原生路由压栈 \(route)")
+              if (route == "/accounts") {
+                  let vc = SingleFlutterViewController(withEntrypoint: "main", route)
+                  navController.pushViewController(vc, animated: true)
+              } else {
+                  let vc = ViewController()
+                  navController.pushViewController(vc, animated: true)
+              }
               result("")
 
           } else {

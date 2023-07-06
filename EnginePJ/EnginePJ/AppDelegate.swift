@@ -17,11 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window =  UIWindow(frame: UIScreen.main.bounds)
-//        // 尝试引擎预热
-//        let newEngine = self.enginesGroup.makeEngine(withEntrypoint: "main", libraryURI: nil)
-//        newEngine.run()
         
+        window =  UIWindow(frame: UIScreen.main.bounds)
         
         // Override point for customization after application launch.
 

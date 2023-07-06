@@ -34,8 +34,8 @@ import 'dart:ui' as ui;
     return;
   }
   
+@pragma('vm:entry-point')
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   await waitForStart();
   runApp(const MyApp());
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             TextButton(onPressed: (){
               // context.go('/users/123');
-              YCNavigator().push( '/accounts', toNative: _toNative);
+              YCNavigator().push( '/mine', toNative: _toNative);
             }, child:  Text('跳转到账户模块 toNative $_toNative'))
           ],
         ),
