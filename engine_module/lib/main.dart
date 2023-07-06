@@ -6,11 +6,40 @@ import 'package:go_router/go_router.dart';
 // package 拆分业务模块
 import 'package:engine_module/package_accounts.dart';
 import 'package:engine_module/package_mine.dart';
-
+  
 // navigator 能力下沉
 import 'package:engine_module/navigator_imp.dart';
+import 'dart:ui' as ui;
 
-void main() => runApp(const MyApp());
+ /// wait
+  Future<void> waitForStart() async {
+    final last = DateTime.now().millisecondsSinceEpoch;
+    final stream = Stream<double>.periodic(
+        const Duration(milliseconds: 10), (x) => ui.window.physicalSize.width);
+    // wait for
+    await for (double value in stream) {
+      final current = DateTime.now().millisecondsSinceEpoch;
+      final timeout = (current - last) >= 100;
+      if (value > 0) {
+        final current = DateTime.now().millisecondsSinceEpoch;
+        print(
+            "guangShopFlutter global: coast time == ${current - last}");
+        return;
+      } else if (timeout) {
+        print(
+            "guangShopFlutter waitForStart timeout, window size is 0");
+        return;
+      }
+    }
+    return;
+  }
+  
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await waitForStart();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

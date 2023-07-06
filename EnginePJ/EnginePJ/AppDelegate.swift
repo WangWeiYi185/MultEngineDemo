@@ -11,23 +11,26 @@ import Flutter
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
      // 全局单例设计
-    let engines = FlutterEngineGroup(name: "multiple-flutters", project: nil)
-    let window  = UIWindow(frame: UIScreen.main.bounds)
+    let enginesGroup = FlutterEngineGroup(name: "multiple-flutters", project: nil)
+    var window: UIWindow?
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // 尝试引擎预热
-        let newEngine = self.engines.makeEngine(withEntrypoint: "main", libraryURI: "")
-        newEngine.run()
+        
+        window =  UIWindow(frame: UIScreen.main.bounds)
+//        // 尝试引擎预热
+//        let newEngine = self.enginesGroup.makeEngine(withEntrypoint: "main", libraryURI: nil)
+//        newEngine.run()
         
         
         // Override point for customization after application launch.
 
         let vc = ViewController();
         let root = UINavigationController(rootViewController: vc)
-        self.window.rootViewController = root
+        self.window?.rootViewController = root
         
         // self.window.backgroundColor = UIColor.black
-        self.window.makeKeyAndVisible()
+        self.window?.makeKeyAndVisible()
         
         return true
     }

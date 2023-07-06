@@ -58,6 +58,8 @@
 		822A5B922A53E72200400B21 /* YCFlutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCFlutterViewController.swift; sourceTree = "<group>"; };
 		822A5B942A53E94D00400B21 /* YCDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCDataModel.swift; sourceTree = "<group>"; };
 		822A5B982A557C1F00400B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		82B818B82A55FBFA005F7C96 /* EnginePJ-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EnginePJ-Bridging-Header.h"; sourceTree = "<group>"; };
+		82CD931C2A5600F600D5C448 /* FlutterViewController+YCSurface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlutterViewController+YCSurface.h"; sourceTree = "<group>"; };
 		92FB9E9EA8BC2FBDB3A0B4C0 /* Pods-EnginePJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJ.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJ/Pods-EnginePJ.debug.xcconfig"; sourceTree = "<group>"; };
 		9755CE38F43BB942E6C728EC /* Pods-EnginePJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJTests.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJTests/Pods-EnginePJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9010F3C5EAC55556F848BA9 /* Pods_EnginePJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnginePJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,8 @@
 				822A5B6D2A53E6F200400B21 /* LaunchScreen.storyboard */,
 				822A5B702A53E6F200400B21 /* Info.plist */,
 				822A5B922A53E72200400B21 /* YCFlutterViewController.swift */,
+				82CD931C2A5600F600D5C448 /* FlutterViewController+YCSurface.h */,
+				82B818B82A55FBFA005F7C96 /* EnginePJ-Bridging-Header.h */,
 			);
 			path = EnginePJ;
 			sourceTree = "<group>";
@@ -243,6 +247,7 @@
 				TargetAttributes = {
 					822A5B5E2A53E6F000400B21 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 					822A5B742A53E6F200400B21 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -566,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PFVL9M662R;
@@ -584,6 +590,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wwy.EnginePJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EnginePJ/EnginePJ-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -595,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PFVL9M662R;
@@ -613,6 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wwy.EnginePJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "EnginePJ/EnginePJ-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
