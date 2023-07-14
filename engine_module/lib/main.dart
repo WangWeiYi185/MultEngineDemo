@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 
 // package 拆分业务模块
@@ -47,9 +46,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // print(' ${YCNavigator().navigatorKey}');
     return MaterialApp.router(
       routerConfig: _router,
-      
     );
     // return MaterialApp(
       
@@ -71,8 +70,8 @@ class MyApp extends StatelessWidget {
 }
 
 final _router = GoRouter(
-  navigatorKey:  YCNavigator().navigatorKey,
   initialLocation: YCNavigator().appInitialRoute, // 获取原生传递的路由 (initRoute)
+  navigatorKey: YCNavigator().navigatorKey,
   routes: [
     GoRoute(
       path: '/',
@@ -188,12 +187,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
             }),
             TextButton(onPressed: (){
-              // context.go('/users/123');
               YCNavigator().push( '/accounts', toNative: _toNative);
             }, child:  Text('跳转到账户模块 toNative $_toNative')),
 
             TextButton(onPressed: (){
-              // context.go('/users/123');
               YCNavigator().push( '/mine', toNative: _toNative);
             }, child:  Text('跳转到账户模块 toNative $_toNative'))
           ],

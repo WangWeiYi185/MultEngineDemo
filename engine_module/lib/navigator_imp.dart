@@ -15,7 +15,10 @@ class YCNavigator extends INavigator {
   static YCNavigator? _instance;
   static MethodChannel? _channel;
 
-  GlobalKey<NavigatorState> get navigatorKey => GlobalKey<NavigatorState>(debugLabel: 'YCNavigator_GlobalKey');
+  
+  GlobalKey<NavigatorState> get navigatorKey => _navigatorKey;
+  final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>(debugLabel: 'ycNavigatorKey');
+
   String get appInitialRoute => _appInitialRoute;
   final String _appInitialRoute = PlatformDispatcher.instance.defaultRouteName;
 
@@ -31,10 +34,16 @@ class YCNavigator extends INavigator {
       if (!dev && toNative) {
         _channel?.invokeMethod<void>("push", {"route": route, ...param ?? {}});
       } else {
+          BuildContext? state = navigatorKey.currentState?.overlay?.context;
+          BuildContext? context = navigatorKey.currentContext;
           if (kDebugMode) {
-            print("route: $route, param: $param, navigatorKey: ${navigatorKey.currentContext}");
+            print("stae: $state, context: $context");
           }
-         navigatorKey.currentContext?.goNamed(route, queryParameters: param ?? {}); 
+         state!.push(route,);
+        //  state.pushNamed(route);
+        //  state.goNamed(route);
+        //  state.go(route);
+         // Navigator.push(state!, MaterialPageRoute(builder: (context) => const Scaffold(body: Center(child: Text('test')))));
       }
     
   }
@@ -42,14 +51,17 @@ class YCNavigator extends INavigator {
   @override
   void pop({bool toNative = true, Map? param}){
         // 检测当前路由栈 是否只有一个,
-       if (!dev && toNative) {
-        _channel?.invokeMethod<void>("pop", param);
-      } else {
-          navigatorKey.currentContext?.pop( param ?? {}); 
-      }
-    
-      
-    
+        BuildContext? state = navigatorKey.currentState?.overlay?.context;
+      //  if (!dev && toNative) {
+      //   _channel?.invokeMethod<void>("pop", param);
+      // } else {
+        if (state!.canPop()) {
+          state.pop();
+        } else {
+          _channel?.invokeMethod<void>("pop", param);
+        }
+
+      //}
   }
 
 }

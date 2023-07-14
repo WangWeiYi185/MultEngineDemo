@@ -58,7 +58,7 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
         DataModel.shared.count = DataModel.shared.count + 1
         result(nil)
       } else if call.method == "push" {
-          print("原生路由压栈 \(type(of: call.arguments))")
+          print("原生路由压栈 \(call.arguments ?? "")")
           if  let arguments = call.arguments as? [AnyHashable: Any?],
               let route = arguments["route"] as? String {
               print("原生路由压栈 \(route)")
