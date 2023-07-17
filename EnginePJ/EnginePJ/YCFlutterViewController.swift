@@ -6,7 +6,7 @@
 //
 
 import Flutter
-import FlutterPluginRegistrant
+// import FlutterPluginRegistrant
 import Foundation
 /// A FlutterViewController intended for the MyApp widget in the Flutter module.
 ///
@@ -26,7 +26,7 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
 
 
     let newEngine = appDelegate.enginesGroup.makeEngine(with: options)
-    GeneratedPluginRegistrant.register(with: newEngine)
+    // GeneratedPluginRegistrant.register(with: newEngine)
     super.init(engine: newEngine, nibName: nil, bundle: nil)
     DataModel.shared.addObserver(observer: self)
   }

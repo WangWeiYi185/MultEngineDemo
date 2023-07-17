@@ -1,0 +1,4 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/engine_web.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/App.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/engine_web_plugin.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework

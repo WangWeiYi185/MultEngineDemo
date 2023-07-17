@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:engine_web/navigator_imp.dart';
 
+
 class PackageAccounts extends StatefulWidget {
   const PackageAccounts({ Key? key }) : super(key: key);
 
@@ -22,9 +23,11 @@ class PackageAccountsState extends State<PackageAccounts> {
             },
         )
         ),
-        body: const Center(
-          child: Text('账号'),
-          
+        body:  Center(
+          child:   TextButton(onPressed: (){
+            YCNavigator().push( '/accounts', toNative: true);
+          }, child:  const Text('跳转到账户模块 toNative ')),
+        
         ),
       ),
     );

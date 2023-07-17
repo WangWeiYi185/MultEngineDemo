@@ -1,0 +1,29 @@
+{
+  "name": "engine_web",
+  "version": "0.1.0",
+  "summary": "A short description of engine_web.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/王维一/engine_web",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "王维一": "weiyi.wang@ly.com"
+  },
+  "source": {
+    "git": "https://github.com/王维一/engine_web.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source_files": "ios_source/classes/**/*",
+  "vendored_frameworks": "ios_source/frameworks/*.xcframework",
+  "resource_bundles": {
+    "engine_web": [
+      "ios_source/assets/*.{png,yaml,yml,xcassets,json}",
+      "assets/json/*.{json}"
+    ]
+  }
+}

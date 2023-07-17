@@ -1,0 +1,3 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/App.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/engine_web_plugin.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/Flutter.framework

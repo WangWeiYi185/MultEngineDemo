@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/engine_web/engine_web-xcframeworks.sh
+${PODS_ROOT}/../../engine_web/ios_source/frameworks/App.xcframework
+${PODS_ROOT}/../../engine_web/ios_source/frameworks/engine_web_plugin.xcframework
+${PODS_ROOT}/../../engine_web/ios_source/frameworks/Flutter.xcframework

@@ -22,6 +22,9 @@ environment:
 
 dependencies:
   plugin_platform_interface: '2.1.4'
+  engine_web_plugin:
+     path: '../engine_web_plugin'
+    
   go_router: '9.0.0'
   flutter:
     sdk: flutter

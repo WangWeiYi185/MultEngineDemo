@@ -9,6 +9,7 @@ class PackageMine extends StatefulWidget {
 }
 
 class PackageMineState extends State<PackageMine> {
+  String? text;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -20,8 +21,15 @@ class PackageMineState extends State<PackageMine> {
             onPressed: () {
               YCNavigator().pop();
             },
-        )
         ),
+          actions: [
+            TextButton(
+              child: Text(text!),
+            onPressed: () {},
+            )
+        ]
+        ),
+
         body: const Center(
           child: Text('我的'),
         ),

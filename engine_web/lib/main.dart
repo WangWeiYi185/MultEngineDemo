@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +11,6 @@ import 'package:engine_web/package_mine.dart';
 // navigator 能力下沉
 import 'package:engine_web/navigator_imp.dart';
 import 'dart:ui' as ui;
-
  /// wait
   Future<void> waitForStart() async {
     final last = DateTime.now().millisecondsSinceEpoch;
@@ -34,9 +35,19 @@ import 'dart:ui' as ui;
   }
   
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   await waitForStart();
-  runApp(const MyApp());
+  runZonedGuarded(() => runApp(const MyApp()), (error, stack) { 
+    print("啊 我死了");
+    // 获取当前路由参数吐回给原生，原生触发降级策略
+  });
+    const bkupChannel = MethodChannel('disaster-backUp');
+    FlutterError.onError = (FlutterErrorDetails details) {
+      bkupChannel.invokeMethod<void>("disasterBackUp", {
+        
+      });
+    print("啊 我要写一个惨字 $details");
+    // 获取当前路由参数吐回给原生，原生触发降级策略
+  };
 }
 
 class MyApp extends StatelessWidget {
@@ -110,6 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _toNative = true;
 
   late MethodChannel _channel;
+  late MethodChannel _backUpChannel;
 
   @override
   void initState() {

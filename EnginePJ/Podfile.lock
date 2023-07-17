@@ -1,22 +1,16 @@
 PODS:
-  - Flutter (1.0.0)
-  - FlutterPluginRegistrant (0.0.1):
-    - Flutter
+  - engine_web (0.1.0)
 
 DEPENDENCIES:
-  - Flutter (from `../engine_module/.ios/Flutter`)
-  - FlutterPluginRegistrant (from `../engine_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - engine_web (from `../engine_web`)
 
 EXTERNAL SOURCES:
-  Flutter:
-    :path: "../engine_module/.ios/Flutter"
-  FlutterPluginRegistrant:
-    :path: "../engine_module/.ios/Flutter/FlutterPluginRegistrant"
+  engine_web:
+    :path: "../engine_web"
 
 SPEC CHECKSUMS:
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  FlutterPluginRegistrant: 58acfb6cb31ee4ca14f920aba101815efda113ee
+  engine_web: 7e135100dfbdfd447d7295dd3b11274a59a81920
 
-PODFILE CHECKSUM: 413bdfdf2c10c572c5857b458ec19658aacba5f9
+PODFILE CHECKSUM: 76decf818598449c9a992176f41bdf4dc0963e2b
 
 COCOAPODS: 1.12.1
