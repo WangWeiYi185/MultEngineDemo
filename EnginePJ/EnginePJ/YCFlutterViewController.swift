@@ -65,6 +65,10 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
               if (route == "/accounts") {
                   let vc = SingleFlutterViewController(withEntrypoint: "main", route)
                   navController.pushViewController(vc, animated: true)
+              } else if (route == "/mine") {
+                  let vc = SingleFlutterViewController(withEntrypoint: "main", route)
+                  navController.pushViewController(vc, animated: true)
+                  
               } else {
                   let vc = ViewController()
                   navController.pushViewController(vc, animated: true)

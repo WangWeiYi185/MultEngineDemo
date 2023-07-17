@@ -5,6 +5,12 @@ platform :ios, '11.0'
     source 'git@gitlab.qima-inc.com:guang-app-lib/dynamicCocoaPodsSpecs.git'
     source 'git@gitlab.qima-inc.com:guang-app-lib/staticCocoaPodsSpecs.git'
     source 'git@gitlab.qima-inc.com:wsc_ios/WSCPodSpecs.git'
+    source 'https://github.com/CocoaPods/Specs.git'
+    source 'http://gitlab.qima-inc.com/AppLib/RenRenPodspecs.git'
+    source 'http://gitlab.qima-inc.com/guang-app-lib/cocoaPodsSepcs'
+    source 'git@gitlab.qima-inc.com:guang-app-lib/dynamicCocoaPodsSpecs.git'
+    source 'git@gitlab.qima-inc.com:guang-app-lib/staticCocoaPodsSpecs.git'
+    source 'git@gitlab.qima-inc.com:wsc_ios/WSCPodSpecs.git'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'

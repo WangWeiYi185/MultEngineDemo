@@ -1,0 +1,6 @@
+framework module engine_web_plugin {
+  umbrella header "engine_web_plugin-umbrella.h"
+
+  export *
+  module * { export * }
+}

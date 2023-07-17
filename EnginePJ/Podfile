@@ -1,16 +1,18 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-#flutter_application_path = '../MultEngineDemo/engine_web'
-#load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
+flutter_application_path = '../engine_web/'
+# 获取本地（开发模式用）
+require File.join('/Users/wangweiyi/fvm/default/packages', 'flutter_tools', 'bin', 'podhelper.rb')
 
 target 'EnginePJ' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  #install_all_flutter_pods(flutter_application_path)
+  
+  # 加载所有本地目录 （开发模式用）
+  flutter_install_all_ios_pods File.realpath(flutter_application_path)
 
   # Pods for EnginePJ
-
   pod 'engine_web', :path => '../engine_web'
 
   target 'EnginePJTests' do
@@ -25,7 +27,12 @@ target 'EnginePJ' do
 end
 
 post_install do |installer|
+  # 添加pods 注册 （开发模式用）
   flutter_post_install(installer) if defined?(flutter_post_install)
+  # 注入所有plugin pods 编译依赖 （开发模式用）
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+  end
   installer.generated_projects.each do |project|
         project.targets.each do |target|
             target.build_configurations.each do |config|

@@ -42,9 +42,13 @@ cp ./Debug/App.xcframework/ios-arm64_x86_64-simulator/App.framework/flutter_asse
 cp ./Debug/App.xcframework/ios-arm64_x86_64-simulator/App.framework/flutter_assets/vm_snapshot_data ./Release/App.xcframework/ios-arm64_x86_64-simulator/App.framework/flutter_assets/vm_snapshot_data
 
 
+
 cd $workpath
+put ${workpath}
 rm -r ./ios_source/frameworks/*
 cp -R ./build/ios/framework/Release/ ./ios_source/frameworks
+cp ./build/ios/framework/GeneratedPluginRegistrant.h ./ios_source/Classes
+cp ./build/ios/framework/GeneratedPluginRegistrant.m ./ios_source/Classes
 fmdbPath=./ios_source/frameworks/FMDB.xcframework
 if test -d $fmdbPath
 then

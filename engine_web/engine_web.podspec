@@ -29,12 +29,33 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
+  # 本地编译结构
+  # s.source_files = 'ios_source/classes/**/*'
+  # s.vendored_frameworks = 'ios_source/frameworks/*.xcframework'
+  # s.resource_bundles = {
+  #   'engine_web' => ['ios_source/assets/*.{png,yaml,yml,xcassets,json}' , 'assets/json/*.{json}']
+  # }
 
+  
+  # 本地调试结构
   s.source_files = 'ios_source/classes/**/*'
-  s.vendored_frameworks = 'ios_source/frameworks/*.xcframework'
   s.resource_bundles = {
-    'engine_web' => ['ios_source/assets/*.{png,yaml,yml,xcassets,json}' , 'assets/json/*.{json}']
+    'engine_web' => ['ios_source/assets/*.{png,yaml,yml,xcassets,json}','assets/json/*.{json}']
   }
+  #其他引入通过flutte 工具链引入 （framework plugin）
+  
+  
+  # 发布模式结构
+  # s.dependency 'FlutterEngine', '3.3.7'
+  # s.source = { :http => 'https://b.yzcdn.cn/guangshop/flutter/build/module/1665720239/flutterModule.tar.bz2'} // 索引仓库
+  # s.source_files = 'classes/**/*'
+  # s.vendored_frameworks = 'frameworks/*.xcframework'
+  # s.resource_bundles = {
+  #   'guangshop_flutter_module' => ['assets/*.{png,yaml,yml,xcassets,json}', 'assets/json/*.{json}']
+  # }
+
+
+
   
   # s.resource_bundles = {
   #   'engine_web' => ['engine_web/Assets/*.png']

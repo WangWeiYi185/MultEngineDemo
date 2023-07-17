@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-EnginePJ/Pods-EnginePJ-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/engine_web/engine_web.framework
-${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/App.framework/App
-${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/engine_web_plugin.framework/engine_web_plugin
-${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/Flutter.framework/Flutter
+${BUILT_PRODUCTS_DIR}/engine_web_plugin/engine_web_plugin.framework
+${BUILT_PRODUCTS_DIR}/integration_test/integration_test.framework

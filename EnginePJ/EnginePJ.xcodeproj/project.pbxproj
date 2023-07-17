@@ -19,6 +19,9 @@
 		822A5B932A53E72200400B21 /* YCFlutterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5B922A53E72200400B21 /* YCFlutterViewController.swift */; };
 		822A5B952A53E94D00400B21 /* YCDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822A5B942A53E94D00400B21 /* YCDataModel.swift */; };
 		822A5B992A557C1F00400B21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 822A5B982A557C1F00400B21 /* Main.storyboard */; };
+		82AD63A92A652318001D2CE9 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A62A652318001D2CE9 /* Debug.xcconfig */; };
+		82AD63AA2A652318001D2CE9 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A72A652318001D2CE9 /* Release.xcconfig */; };
+		82AD63AB2A652318001D2CE9 /* Generated.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A82A652318001D2CE9 /* Generated.xcconfig */; };
 		F0EDCF9BEF7259675E12102F /* Pods_EnginePJTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C415C93ED4A6DE3D618F8F5 /* Pods_EnginePJTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +61,11 @@
 		822A5B922A53E72200400B21 /* YCFlutterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCFlutterViewController.swift; sourceTree = "<group>"; };
 		822A5B942A53E94D00400B21 /* YCDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCDataModel.swift; sourceTree = "<group>"; };
 		822A5B982A557C1F00400B21 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		82B818B82A55FBFA005F7C96 /* EnginePJ-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EnginePJ-Bridging-Header.h"; sourceTree = "<group>"; };
-		82CD931C2A5600F600D5C448 /* FlutterViewController+YCSurface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlutterViewController+YCSurface.h"; sourceTree = "<group>"; };
+		8291EDA12A655526005050CC /* EnginePJ-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EnginePJ-Bridging-Header.h"; sourceTree = "<group>"; };
+		8291EDA22A655526005050CC /* FlutterViewController+YCSurface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlutterViewController+YCSurface.h"; sourceTree = "<group>"; };
+		82AD63A62A652318001D2CE9 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		82AD63A72A652318001D2CE9 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		82AD63A82A652318001D2CE9 /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generated.xcconfig; sourceTree = "<group>"; };
 		92FB9E9EA8BC2FBDB3A0B4C0 /* Pods-EnginePJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJ.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJ/Pods-EnginePJ.debug.xcconfig"; sourceTree = "<group>"; };
 		9755CE38F43BB942E6C728EC /* Pods-EnginePJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJTests.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJTests/Pods-EnginePJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9010F3C5EAC55556F848BA9 /* Pods_EnginePJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnginePJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +114,7 @@
 		822A5B562A53E6F000400B21 = {
 			isa = PBXGroup;
 			children = (
+				82AD63A52A652318001D2CE9 /* Flutter */,
 				822A5B612A53E6F000400B21 /* EnginePJ */,
 				822A5B782A53E6F200400B21 /* EnginePJTests */,
 				822A5B822A53E6F200400B21 /* EnginePJUITests */,
@@ -137,9 +144,9 @@
 				822A5B6B2A53E6F200400B21 /* Assets.xcassets */,
 				822A5B6D2A53E6F200400B21 /* LaunchScreen.storyboard */,
 				822A5B702A53E6F200400B21 /* Info.plist */,
+				8291EDA12A655526005050CC /* EnginePJ-Bridging-Header.h */,
+				8291EDA22A655526005050CC /* FlutterViewController+YCSurface.h */,
 				822A5B922A53E72200400B21 /* YCFlutterViewController.swift */,
-				82CD931C2A5600F600D5C448 /* FlutterViewController+YCSurface.h */,
-				82B818B82A55FBFA005F7C96 /* EnginePJ-Bridging-Header.h */,
 			);
 			path = EnginePJ;
 			sourceTree = "<group>";
@@ -159,6 +166,16 @@
 				822A5B852A53E6F200400B21 /* EnginePJUITestsLaunchTests.swift */,
 			);
 			path = EnginePJUITests;
+			sourceTree = "<group>";
+		};
+		82AD63A52A652318001D2CE9 /* Flutter */ = {
+			isa = PBXGroup;
+			children = (
+				82AD63A62A652318001D2CE9 /* Debug.xcconfig */,
+				82AD63A72A652318001D2CE9 /* Release.xcconfig */,
+				82AD63A82A652318001D2CE9 /* Generated.xcconfig */,
+			);
+			path = Flutter;
 			sourceTree = "<group>";
 		};
 		DC7B5560DDFD9E1B03D5F3F9 /* Pods */ = {
@@ -182,10 +199,12 @@
 			buildConfigurationList = 822A5B892A53E6F200400B21 /* Build configuration list for PBXNativeTarget "EnginePJ" */;
 			buildPhases = (
 				75460AE4FD398364387AA5AA /* [CP] Check Pods Manifest.lock */,
+				82AD63A22A6522C5001D2CE9 /* ShellScript */,
 				822A5B5B2A53E6F000400B21 /* Sources */,
 				822A5B5C2A53E6F000400B21 /* Frameworks */,
 				822A5B5D2A53E6F000400B21 /* Resources */,
 				BEB71ED3FCE9984D4345A49F /* [CP] Embed Pods Frameworks */,
+				8291EDA32A655B99005050CC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -284,9 +303,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82AD63A92A652318001D2CE9 /* Debug.xcconfig in Resources */,
 				822A5B992A557C1F00400B21 /* Main.storyboard in Resources */,
+				82AD63AB2A652318001D2CE9 /* Generated.xcconfig in Resources */,
 				822A5B6F2A53E6F200400B21 /* LaunchScreen.storyboard in Resources */,
 				822A5B6C2A53E6F200400B21 /* Assets.xcassets in Resources */,
+				82AD63AA2A652318001D2CE9 /* Release.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +367,42 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8291EDA32A655B99005050CC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" embed_and_thin\n";
+		};
+		82AD63A22A6522C5001D2CE9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		A15C193304489366DA28C8E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -581,7 +639,7 @@
 		};
 		822A5B8A2A53E6F200400B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92FB9E9EA8BC2FBDB3A0B4C0 /* Pods-EnginePJ.debug.xcconfig */;
+			baseConfigurationReference = 82AD63A62A652318001D2CE9 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

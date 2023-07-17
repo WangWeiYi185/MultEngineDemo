@@ -1,16 +1,33 @@
 PODS:
   - engine_web (0.1.0)
+  - engine_web_plugin (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - engine_web (from `../engine_web`)
+  - engine_web_plugin (from `../engine_web/.symlinks/plugins/engine_web_plugin/ios`)
+  - Flutter (from `../engine_web/Flutter`)
+  - integration_test (from `../engine_web/.symlinks/plugins/integration_test/ios`)
 
 EXTERNAL SOURCES:
   engine_web:
     :path: "../engine_web"
+  engine_web_plugin:
+    :path: "../engine_web/.symlinks/plugins/engine_web_plugin/ios"
+  Flutter:
+    :path: "../engine_web/Flutter"
+  integration_test:
+    :path: "../engine_web/.symlinks/plugins/integration_test/ios"
 
 SPEC CHECKSUMS:
-  engine_web: 7e135100dfbdfd447d7295dd3b11274a59a81920
+  engine_web: a106b7982891e6d899e95592887266b73a4bb6a4
+  engine_web_plugin: 35b73088d6532f41219e697f7736bec2ad4735ba
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  integration_test: 13825b8a9334a850581300559b8839134b124670
 
-PODFILE CHECKSUM: 76decf818598449c9a992176f41bdf4dc0963e2b
+PODFILE CHECKSUM: 8687271a8b908d62b3f56c1e197c3b66355a98b2
 
 COCOAPODS: 1.12.1

@@ -7,44 +7,41 @@ import 'package:go_router/go_router.dart';
 // package 拆分业务模块
 import 'package:engine_web/package_accounts.dart';
 import 'package:engine_web/package_mine.dart';
-  
+
 // navigator 能力下沉
 import 'package:engine_web/navigator_imp.dart';
 import 'dart:ui' as ui;
- /// wait
-  Future<void> waitForStart() async {
-    final last = DateTime.now().millisecondsSinceEpoch;
-    final stream = Stream<double>.periodic(
-        const Duration(milliseconds: 10), (x) => ui.window.physicalSize.width);
-    // wait for
-    await for (double value in stream) {
+
+/// wait
+Future<void> waitForStart() async {
+  final last = DateTime.now().millisecondsSinceEpoch;
+  final stream = Stream<double>.periodic(
+      const Duration(milliseconds: 10), (x) => ui.window.physicalSize.width);
+  // wait for
+  await for (double value in stream) {
+    final current = DateTime.now().millisecondsSinceEpoch;
+    final timeout = (current - last) >= 100;
+    if (value > 0) {
       final current = DateTime.now().millisecondsSinceEpoch;
-      final timeout = (current - last) >= 100;
-      if (value > 0) {
-        final current = DateTime.now().millisecondsSinceEpoch;
-        print(
-            "guangShopFlutter global: coast time == ${current - last}");
-        return;
-      } else if (timeout) {
-        print(
-            "guangShopFlutter waitForStart timeout, window size is 0");
-        return;
-      }
+      print(" global: coast time == ${current - last}");
+      return;
+    } else if (timeout) {
+      print(" waitForStart timeout, window size is 0");
+      return;
     }
-    return;
   }
-  
+  return;
+}
+
 void main() async {
   await waitForStart();
-  runZonedGuarded(() => runApp(const MyApp()), (error, stack) { 
+  runZonedGuarded(() => runApp(const MyApp()), (error, stack) {
     print("啊 我死了");
     // 获取当前路由参数吐回给原生，原生触发降级策略
   });
-    const bkupChannel = MethodChannel('disaster-backUp');
-    FlutterError.onError = (FlutterErrorDetails details) {
-      bkupChannel.invokeMethod<void>("disasterBackUp", {
-        
-      });
+  const bkupChannel = MethodChannel('disaster-backUp');
+  FlutterError.onError = (FlutterErrorDetails details) {
+    bkupChannel.invokeMethod<void>("disasterBackUp", {});
     print("啊 我要写一个惨字 $details");
     // 获取当前路由参数吐回给原生，原生触发降级策略
   };
@@ -61,7 +58,7 @@ class MyApp extends StatelessWidget {
       routerConfig: _router,
     );
     // return MaterialApp(
-      
+
     //   title: 'Flutter Demo',
     //   theme: ThemeData(
     //     // This is the theme of your application.
@@ -85,13 +82,15 @@ final _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const MyHomePage(title: '直视我栽种',),
+      builder: (context, state) => const MyHomePage(
+        title: '直视我栽种',
+      ),
     ),
-     GoRoute(
+    GoRoute(
       path: '/accounts',
       builder: (context, state) => const PackageAccounts(),
     ),
-      GoRoute(
+    GoRoute(
       path: '/mine',
       builder: (context, state) => const PackageMine(),
     ),
@@ -144,7 +143,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _channel.invokeMethod<void>("incrementCount", _counter);
   }
 
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -155,16 +153,15 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-        leading: IconButton(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
+          leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios),
             onPressed: () {
               YCNavigator().pop();
             },
-        )
-      ),
+          )),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -192,18 +189,23 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            Switch(value: _toNative, onChanged: (state){
+            Switch(
+                value: _toNative,
+                onChanged: (state) {
                   setState(() {
                     _toNative = state;
                   });
-            }),
-            TextButton(onPressed: (){
-              YCNavigator().push( '/accounts', toNative: _toNative);
-            }, child:  Text('跳转到账户模块 toNative $_toNative')),
-
-            TextButton(onPressed: (){
-              YCNavigator().push( '/mine', toNative: _toNative);
-            }, child:  Text('跳转到账户模块 toNative $_toNative'))
+                }),
+            TextButton(
+                onPressed: () {
+                  YCNavigator().push('/accounts', toNative: _toNative);
+                },
+                child: Text('跳转到账户模块 toNative $_toNative')),
+            TextButton(
+                onPressed: () {
+                  YCNavigator().push('/mine', toNative: _toNative);
+                },
+                child: Text('跳转到账户模块 toNative $_toNative'))
           ],
         ),
       ),

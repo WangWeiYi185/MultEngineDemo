@@ -19,7 +19,6 @@
     "ios": "11.0"
   },
   "source_files": "ios_source/classes/**/*",
-  "vendored_frameworks": "ios_source/frameworks/*.xcframework",
   "resource_bundles": {
     "engine_web": [
       "ios_source/assets/*.{png,yaml,yml,xcassets,json}",

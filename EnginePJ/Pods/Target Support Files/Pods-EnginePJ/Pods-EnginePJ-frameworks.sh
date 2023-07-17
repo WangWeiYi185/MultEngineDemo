@@ -177,15 +177,13 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/engine_web/engine_web.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/App.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/engine_web_plugin.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/Flutter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/engine_web_plugin/engine_web_plugin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/integration_test/integration_test.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/engine_web/engine_web.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/App.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/engine_web_plugin.framework"
-  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/engine_web/Flutter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/engine_web_plugin/engine_web_plugin.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/integration_test/integration_test.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
