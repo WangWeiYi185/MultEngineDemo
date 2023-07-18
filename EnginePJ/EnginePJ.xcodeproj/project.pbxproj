@@ -22,6 +22,7 @@
 		82AD63A92A652318001D2CE9 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A62A652318001D2CE9 /* Debug.xcconfig */; };
 		82AD63AA2A652318001D2CE9 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A72A652318001D2CE9 /* Release.xcconfig */; };
 		82AD63AB2A652318001D2CE9 /* Generated.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 82AD63A82A652318001D2CE9 /* Generated.xcconfig */; };
+		82C817FA2A65BBDB0000AB3A /* YCWebContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C817F92A65BBDB0000AB3A /* YCWebContainer.swift */; };
 		F0EDCF9BEF7259675E12102F /* Pods_EnginePJTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C415C93ED4A6DE3D618F8F5 /* Pods_EnginePJTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		82AD63A62A652318001D2CE9 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		82AD63A72A652318001D2CE9 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		82AD63A82A652318001D2CE9 /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Generated.xcconfig; sourceTree = "<group>"; };
+		82C817F92A65BBDB0000AB3A /* YCWebContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCWebContainer.swift; sourceTree = "<group>"; };
 		92FB9E9EA8BC2FBDB3A0B4C0 /* Pods-EnginePJ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJ.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJ/Pods-EnginePJ.debug.xcconfig"; sourceTree = "<group>"; };
 		9755CE38F43BB942E6C728EC /* Pods-EnginePJTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnginePJTests.debug.xcconfig"; path = "Target Support Files/Pods-EnginePJTests/Pods-EnginePJTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9010F3C5EAC55556F848BA9 /* Pods_EnginePJ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnginePJ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				8291EDA12A655526005050CC /* EnginePJ-Bridging-Header.h */,
 				8291EDA22A655526005050CC /* FlutterViewController+YCSurface.h */,
 				822A5B922A53E72200400B21 /* YCFlutterViewController.swift */,
+				82C817F92A65BBDB0000AB3A /* YCWebContainer.swift */,
 			);
 			path = EnginePJ;
 			sourceTree = "<group>";
@@ -402,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n /bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 		A15C193304489366DA28C8E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -476,6 +479,7 @@
 				822A5B932A53E72200400B21 /* YCFlutterViewController.swift in Sources */,
 				822A5B952A53E94D00400B21 /* YCDataModel.swift in Sources */,
 				822A5B632A53E6F000400B21 /* AppDelegate.swift in Sources */,
+				82C817FA2A65BBDB0000AB3A /* YCWebContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +529,7 @@
 /* Begin XCBuildConfiguration section */
 		822A5B872A53E6F200400B21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82AD63A62A652318001D2CE9 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -573,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -627,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

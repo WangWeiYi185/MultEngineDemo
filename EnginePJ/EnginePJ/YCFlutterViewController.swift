@@ -15,7 +15,7 @@ import Foundation
 /// instead of inheritence.
 class SingleFlutterViewController: FlutterViewController, DataModelObserver {
     private var channel: FlutterMethodChannel?
-
+    private var bkup_channel: FlutterMethodChannel?
     
 
     init(withEntrypoint entryPoint: String?, _ initRouter: String?) {
@@ -47,12 +47,22 @@ class SingleFlutterViewController: FlutterViewController, DataModelObserver {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+      
+      let navController = self.navigationController!
+    bkup_channel = FlutterMethodChannel(
+        name: "disaster-backUp", binaryMessenger: self.engine!.binaryMessenger)
+    bkup_channel!.setMethodCallHandler { (call: FlutterMethodCall, result: @escaping FlutterResult) in
+      if call.method == "disasterBackUp" {
+          let webVC = YCWebContainer()
+          navController.pushViewController(webVC, animated: true)
+      }
 
-
+    }
+    
+    
     channel = FlutterMethodChannel(
       name: "multiple-flutters", binaryMessenger: self.engine!.binaryMessenger)
     channel!.invokeMethod("setCount", arguments: DataModel.shared.count)
-    let navController = self.navigationController!
     channel!.setMethodCallHandler { (call: FlutterMethodCall, result: @escaping FlutterResult) in
       if call.method == "incrementCount" {
         DataModel.shared.count = DataModel.shared.count + 1
